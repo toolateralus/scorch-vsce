@@ -9,19 +9,41 @@
 			"include": "#strings"
 		},
 		{
+			"include": "#types"	
+		},
+		{
 			"include": "#keywords"
 		},
 		{
 			"include": "#numbers"
 		},
 		{
+			"include": "#operators"
+		},
+		{
 			"include": "#variables"
 		},
 		{
-			"include": "#operators"
+			"include": "#constants"
 		}
 	],
 	"repository": {
+		"types": {
+			"patterns": [
+				{
+					"name": "storage.type.scorch",
+					"match": "\\b(int|double|bool|string|fn|none)\\b"
+				}
+			]
+		},
+		"constants": {
+			"patterns": [
+				{
+					"name": "constant.language.scorch",
+					"match": "\\b(true|false)\\b"
+				}
+			]
+		},
 		"comments": {
 			"name": "comment.line.scorch",
 			"begin": "//",
