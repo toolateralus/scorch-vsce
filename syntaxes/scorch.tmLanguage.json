@@ -3,18 +3,29 @@
 	"name": "scorch",
 	"patterns": [
 		{
-			"include": "#keywords"
+			"include": "#comments"
 		},
 		{
 			"include": "#strings"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#numbers"
+		},
+		{
+			"include": "#variables"
+		},
+		{
+			"include": "#operators"
 		}
 	],
 	"repository": {
-		"keywords": {
-			"patterns": [{
-				"name": "keyword.control.scorch",
-				"match": "\\b(if|while|for|return)\\b"
-			}]
+		"comments": {
+			"name": "comment.line.scorch",
+			"begin": "//",
+			"end": "$"
 		},
 		"strings": {
 			"name": "string.quoted.double.scorch",
@@ -24,6 +35,32 @@
 				{
 					"name": "constant.character.escape.scorch",
 					"match": "\\\\."
+				}
+			]
+		},
+		"operators": {
+			"patterns": [
+				{
+					"name": "keyword.operator.scorch",
+					"match": "\\+|-|\\*|/|\\^|\\(|\\)|\\{|:=|\\}|\\[|\\]|<|>|=|\\.|,|:|;|\\||&|!"
+				}
+			]
+		},
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.scorch",
+				"match": "\\b(if|repeat|const|var|break|new|struct|return)\\b"
+			}]
+		},
+		"numbers": {
+			"patterns": [
+				{
+					"name": "constant.numeric.integer.scorch",
+					"match": "\\b[0-9]+\\b"
+				},
+				{
+					"name": "constant.numeric.float.scorch",
+					"match": "\\b[0-9]+\\.[0-9]+\\b"
 				}
 			]
 		}
