@@ -25,9 +25,34 @@
 		},
 		{
 			"include": "#constants"
+		},
+		{
+			"include": "#functions"
 		}
 	],
 	"repository": {
+		"functions": {
+			"patterns": [
+				{
+					"name": "entity.name.function.scorch",
+					"match": "\\b[a-zA-Z_][a-zA-Z0-9_]*\\b\\s*(?=\\()",
+					"captures": {
+						"0": {
+							"name": "punctuation.definition.function.scorch",
+							"match": "\\("
+						},
+						"1": {
+							"name": "meta.function-call.arguments.scorch",
+							"match": "[^\\)]*"
+						},
+						"2": {
+							"name": "punctuation.definition.function.scorch",
+							"match": "\\)"
+						}
+					}
+				}
+			]
+		},
 		"types": {
 			"patterns": [
 				{
@@ -50,9 +75,9 @@
 			"end": "$"
 		},
 		"strings": {
-			"name": "string.quoted.double.scorch",
-			"begin": "\"",
-			"end": "\"",
+			"name": "string.quoted.scorch",
+			"begin": "(\"|')",
+			"end": "(\"|')",
 			"patterns": [
 				{
 					"name": "constant.character.escape.scorch",
@@ -71,7 +96,7 @@
 		"keywords": {
 			"patterns": [{
 				"name": "keyword.control.scorch",
-				"match": "\\b(if|repeat|const|var|break|new|struct|return)\\b"
+				"match": "\\b(if|else|repeat|const|var|break|new|struct|return)\\b"
 			}]
 		},
 		"numbers": {
