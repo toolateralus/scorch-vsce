@@ -56,8 +56,12 @@
 		"types": {
 			"patterns": [
 				{
-					"name": "storage.type.scorch",
-					"match": "\\b(int|double|bool|string|fn|none)\\b"
+					"name": "storage.type.builtin.scorch",
+					"match": "\\b(int|double|bool|string|fn|dynamic|array|none)\\b"
+				},
+				{
+					"name": "entity.name.type.class.scorch",
+					"match": "\\b[A-Z][a-zA-Z0-9]*\\b"
 				}
 			]
 		},
@@ -86,10 +90,10 @@
 			]
 		},
 		"operators": {
-			"patterns": [
-				{
-					"name": "keyword.operator.scorch",
-					"match": "\\+|-|\\*|/|\\^|\\(|\\)|\\{|:=|\\}|\\[|\\]|<|>|=|\\.|,|:|;|\\||&|!"
+			"patterns": [ 
+				{ 
+					"name": "keyword.operator.scorch", 
+					"match": "\\+|-|\\*|/|\\^|\\(|\\)|\\{|:=|\\}|\\[|\\]|<|>|=|\\.|,|:|;|\\||&|!" 
 				}
 			]
 		},
@@ -97,6 +101,10 @@
 			"patterns": [{
 				"name": "keyword.control.scorch",
 				"match": "\\b(if|else|repeat|const|var|break|new|struct|return)\\b"
+			},
+			{
+				"name": "variable.language.this.scorch",
+				"match": "\\bthis\\b"
 			}]
 		},
 		"numbers": {
